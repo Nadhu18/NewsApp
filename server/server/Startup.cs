@@ -17,7 +17,7 @@ using System.Net.Http;
 
 namespace server
 {
-    public class Startup
+    public partial class Startup
     {
         public Startup(IConfiguration configuration)
         {
@@ -37,13 +37,14 @@ namespace server
 
 
             services.AddDbContext<NewsDbContext>(options => options.UseSqlServer(connectionString));
-
+            ConfigureJwtAuthService(Configuration, services);
             services.AddMvc();
             services.AddScoped<INewsDbContext, NewsDbContext>();
             services.AddScoped<INewsRepository, NewsRepository>();
             services.AddScoped<IFavoriteService, FavoriteService>();
 
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+
             var httpClient = new HttpClient();
             services.AddSingleton(httpClient);
 

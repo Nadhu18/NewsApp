@@ -1,18 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net.Http;
-using System.Threading.Tasks;
+﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
 using server.Data.Models;
 using server.Services;
+using System;
+using System.Net.Http;
+using System.Threading.Tasks;
 
 namespace server.Controllers
 {
     [Produces("application/json")]
     [Route("api/News")]
+    [Authorize]
     public class NewsController : Controller
     {
         private readonly IFavoriteService _favService;

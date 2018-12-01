@@ -1,4 +1,4 @@
-<nav class="navbar navbar-default mat-toolbar mat-primary">
+<nav class="navbar navbar-default mat-toolbar mat-primary" *ngIf="showNavBar()">
   <div class="container-fluid">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -16,9 +16,9 @@
         <li><input style="color:black" id="search-text" placeholder="Enter Text" [(ngModel)]="searchTerm"></li>
         <li><button id="search-btn" mat-button (click)="searchNews()">Search</button></li>
       </ul>
-      <!-- <ul class="nav navbar-nav navbar-right">
+      <ul class="nav navbar-nav navbar-right">
         <li><button id="logOutButton" mat-button (click)="logOut()">LogOut</button></li>
-      </ul> -->
+      </ul>
     </div>
   </div>
 </nav>

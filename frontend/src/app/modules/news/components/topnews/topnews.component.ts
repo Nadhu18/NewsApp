@@ -33,7 +33,13 @@ export class TopnewsComponent implements OnInit {
             a.isWatchlisted = false;
           }
         });
+      }, error => {
+        console.error("An Error has occured in Top News component while getting articles.", error);
+        alert("some error occurred. PLease try after some time");
       });
+    }, error => {
+      console.error("An Error has occured in Top News component while getting articles.", error);
+      alert("some error occurred. PLease try after some time");
     });
   }
 

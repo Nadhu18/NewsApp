@@ -1,0 +1,105 @@
+<div class="container">
+  <div class="panel-group panel-card" id="accordion">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">Login</a>
+        </h4>
+      </div>
+      <div id="collapse1" class="panel-collapse collapse in">
+        <div class="panel-body">
+          <mat-card class="card">
+            <mat-card-header>
+              <mat-card-title>Login</mat-card-title>
+            </mat-card-header>
+            <div class="errors" *ngIf="invalidCred">{{invalidCred}}</div>
+            <mat-card-content>
+              <form class="form">
+                <table class="full-width" cellspacing="0">
+                  <tr>
+                    <td>
+                      <mat-form-field class="full-width">
+                        <input matInput placeholder="UserId" [(ngModel)]="userid" name="userid" id="userid" required>
+                      </mat-form-field>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <mat-form-field class="full-width">
+                        <input matInput placeholder="Password" [(ngModel)]="password" type="password" name="password" id="password" required>
+                      </mat-form-field>
+                    </td>
+                  </tr>
+                </table>
+              </form>
+            </mat-card-content>
+            <mat-card-actions>
+              <button mat-raised-button (click)="login()" color="primary" id="loginButton">Login</button>
+            </mat-card-actions>
+          </mat-card>
+        </div>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">Register</a>
+        </h4>
+      </div>
+      <div id="collapse2" class="panel-collapse collapse">
+        <div class="panel-body">
+          <mat-card class="card">
+            <mat-card-header>
+              <mat-card-title>Register</mat-card-title>
+            </mat-card-header>
+            <div class="errors" *ngIf="invalidReg">{{invalidReg}}</div>
+            <mat-card-content>
+              <form class="form">
+                <table class="full-width" cellspacing="0">
+                  <tr>
+                    <td>
+                      <mat-form-field class="full-width">
+                        <input matInput placeholder="UserId" [(ngModel)]="rUserid" name="rUserid" id="rUserid" required>
+                      </mat-form-field>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <mat-form-field class="full-width">
+                        <input matInput placeholder="FirstName" [(ngModel)]="rFirstName" name="rFirstName" id="rFirstName" required>
+                      </mat-form-field>
+                    </td>
+                  </tr>
+                  <tr>
+                      <td>
+                        <mat-form-field class="full-width">
+                          <input matInput placeholder="LastName" [(ngModel)]="rLastName" name="rLastName" id="rLastName" required>
+                        </mat-form-field>
+                      </td>
+                    </tr>
+                  <tr>
+                    <td>
+                      <mat-form-field class="full-width">
+                        <input matInput placeholder="Password" [(ngModel)]="rPassword" type="password" name="rPassword" id="rPassword" required>
+                      </mat-form-field>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <mat-form-field class="full-width">
+                        <input matInput placeholder="Confirm Password" [(ngModel)]="rConfirmPassword" type="password" name="rConfirmPassword" id="rConfirmPassword" required>
+                      </mat-form-field>
+                    </td>
+                  </tr>
+                </table>
+              </form>
+            </mat-card-content>
+            <mat-card-actions>
+              <button mat-raised-button (click)="register()" color="primary" id="registerButton">Register</button>
+            </mat-card-actions>
+          </mat-card>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

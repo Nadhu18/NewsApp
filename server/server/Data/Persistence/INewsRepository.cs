@@ -12,7 +12,7 @@ namespace server.Data.Persistence
         Article GetArticle(int id);
 
         //will return true if the article exists in db
-        bool ArticleExists(int id);
+        bool ArticleExists(int id, string userId);
 
         //should add the article into db
         void AddArticle(Article article);

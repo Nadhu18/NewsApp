@@ -10,28 +10,22 @@ import { NewsService } from '../../news.service';
 export class WatchlistComponent implements OnInit {
   articles: Array<Article>;
 
-  constructor(private service: NewsService) { 
+  constructor(private service: NewsService) {
     this.articles = [];
   }
 
   ngOnInit() {
     this.service.getWatchListedArticles().subscribe(m => {
       this.articles.push(...m);
-      this.service.getWatchListedArticles().subscribe(mw => {
-        this.articles && this.articles.forEach(a => {
-          if (mw.some(x => x.url == a.url)) {
-            a.isWatchlisted = true;
-          }
-          else {
-            a.isWatchlisted = false;
-          }
-        });
-      });
+      this.articles && this.articles.forEach(a => { a.isWatchlisted = true;});
+    }, error => {
+      console.error("An Error has occured in Watchlist component while getting articles.", error);
+      alert("some error occurred. PLease try after some time");
     });
   }
 
   isWatchListEmpty() {
-    this.articles && this.articles.length>0;
+    return this.articles && this.articles.length > 0;
   }
 
 }

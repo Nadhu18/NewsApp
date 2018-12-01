@@ -12,8 +12,12 @@ import { NewsModule } from './modules/news/news.module';
 const appRoutes: Routes = [
   {
     path: '',
-    redirectTo: 'news',
+    redirectTo: 'login',
     pathMatch: 'full'
+  },
+  {
+    path: '**',//wildcard route if user enters wrong URL, he will be navigated to default page
+    redirectTo: 'login'
   }
 ];
 

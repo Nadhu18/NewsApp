@@ -8,5 +8,6 @@ export interface Article {
     publishedAt: string,
     content: string,
     comments: string,
-    isWatchlisted: boolean
+    isWatchlisted: boolean,
+    userId: string
 }

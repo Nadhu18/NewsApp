@@ -1,0 +1,18 @@
+.card {
+    max-width: 500px;
+    margin: auto;
+}
+
+.panel-card {
+    max-width: 500px;
+    margin: auto;
+    margin-top: 50px;
+}
+
+.full-width {
+    width: 100%;
+}
+
+.errors {
+    color: red;
+}

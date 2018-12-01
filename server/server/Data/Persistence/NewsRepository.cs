@@ -25,8 +25,8 @@ namespace server.Data.Persistence
         }
 
         //will return true if the article exists in db
-        public bool ArticleExists(int id) {
-            return _context.Articles.Any(x => x.Id == id);
+        public bool ArticleExists(int id, string userId) {
+            return _context.Articles.Any(e => e.Id == id && e.UserId == userId);
         }
 
         //should add the article into db

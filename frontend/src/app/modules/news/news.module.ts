@@ -16,6 +16,7 @@ import { HomeComponent } from './components/home/home.component';
 import { WatchlistComponent } from './components/watchlist/watchlist.component';
 import { TopnewsComponent } from './components/topnews/topnews.component';
 import { CategorywiseComponent } from './components/categorywise/categorywise.component';
+import { LoginComponent } from './components/login/login.component';
 
 
 @NgModule({
@@ -31,7 +32,7 @@ import { CategorywiseComponent } from './components/categorywise/categorywise.co
     MatPaginatorModule,
     MatSelectModule
   ],
-  declarations: [SearchlistComponent, ThumbnailComponent, ContainerComponent, HomeComponent, WatchlistComponent, TopnewsComponent, CategorywiseComponent],
+  declarations: [SearchlistComponent, ThumbnailComponent, ContainerComponent, HomeComponent, WatchlistComponent, TopnewsComponent, CategorywiseComponent, LoginComponent],
   exports: [
     FormsModule,
     NewsRouterModule

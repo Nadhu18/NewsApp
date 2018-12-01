@@ -33,5 +33,9 @@ namespace server.Data.Models
 
         [JsonProperty(PropertyName = "comments")]
         public string Comments { get; set; }
+
+        [JsonProperty(PropertyName = "userId")]
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        public string UserId { get; set; }
     }
 }

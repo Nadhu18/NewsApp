@@ -24,6 +24,9 @@ export class ThumbnailComponent implements OnInit {
       this.snackBar.open('Article Added To Favorites', '', {
         duration: 1000
       });
+    }, error => {
+      console.error("An Error has occured in thumbnail component while adding the article.", error);
+      alert("some error occurred. PLease try after some time");
     });
   }
 
@@ -33,6 +36,14 @@ export class ThumbnailComponent implements OnInit {
       this.snackBar.open('Article removed from Favorites', '', {
         duration: 1000
       });
+      let url =window.location.href;
+      let arr = url.split('/');
+      if(arr.some(x => x=="favorites")) {
+        location.reload();
+      }
+    }, error => {
+      console.error("An Error has occured in thumbnail component while removing article.", error);
+      alert("some error occurred. PLease try after some time");
     });
   }
 
