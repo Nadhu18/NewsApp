@@ -1,0 +1,15 @@
+
+
+<div class="dropdown category-drop-down">
+  <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">{{selectedCategory}}
+    <span class="caret"></span></button>
+  <ul class="dropdown-menu dropdownUL">
+    <li class="dropdownEle" *ngFor="let category of categories" (click)="onCategorySelect(category);">
+      <span class="dropdown-item">{{category}}</span>
+    </li>
+  </ul>
+</div>
+
+<mat-paginator [length]="model?.totalResults" [pageIndex]="page" [pageSize]="pageSize" [pageSizeOptions]="[5,10,15]" (page)="pageEvent=onPagerChange($event)"></mat-paginator>
+
+<news-container [articles]="model?.articles"></news-container>

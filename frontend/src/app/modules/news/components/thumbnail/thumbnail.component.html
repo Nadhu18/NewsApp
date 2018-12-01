@@ -1,0 +1,20 @@
+<mat-card class="news-card" style="cursor: pointer;">
+  <mat-card-header>
+    <mat-card-title>
+      <h3 class="news-title">{{article?.title}}</h3>
+    </mat-card-title>
+    <mat-card-subtitle>{{article?.publishedAt}}</mat-card-subtitle>
+  </mat-card-header>
+
+  <img class="news-poster" mat-card-image [src]="article?.urlToImage" [alt]="article?.title" (click)="navigateToNewsPage()">
+
+  <mat-card-content class="news-text">{{article?.description}}</mat-card-content>
+
+  <button (click)="addArticleToWatchlist()" id="addToWatchlistButton" class="btn btn-primary favorite-btn">
+    Add to favorites
+  </button>
+  <button *ngIf="article?.isWatchlisted" (click)="removeArticleFromWatchlist()" id="removeFromWatchlistButton" class="btn btn-danger unfavorite-btn">
+      Remove from favorites
+    </button>
+
+</mat-card>

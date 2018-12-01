@@ -1,0 +1,9 @@
+.news-container {
+    margin: auto;
+    width: 100vw;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    /* height: 80vh; */
+    /* overflow-x: auto; */
+}

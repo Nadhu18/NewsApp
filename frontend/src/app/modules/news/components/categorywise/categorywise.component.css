@@ -1,0 +1,14 @@
+.dropdownEle {
+    cursor: pointer;
+    display: block;
+    background-color: #286090;
+    color: white;
+    font-size: 16px;
+    height: 30px;
+    padding: 3px;
+    margin-bottom: 3px;
+}
+
+.dropdownUL {
+    background-color: #286090;
+}

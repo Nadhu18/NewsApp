@@ -1,0 +1,36 @@
+.news-card {
+    width: 400px;
+    margin: 10px;
+    height: 650px;
+}
+
+.news-text {
+    height: 100px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.news-poster {
+    height: 300px;
+}
+
+.news-text::-webkit-scrollbar {
+    width: 2px;
+    background-color: gray;
+}
+
+.article-action {
+    text-align: right;
+}
+
+#addToWatchlistButton {
+    position: absolute;
+    left: 10px;
+    bottom: 20px;
+}
+
+#removeFromWatchlistButton {
+    position: absolute;
+    left: 10px;
+    bottom: 20px;
+}
