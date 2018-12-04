@@ -1,0 +1,38 @@
+version: '3'
+
+services:
+  auth:
+    build:
+      context: ./server/AuthServer
+    ports:
+      - "8089:80"
+    depends_on:
+      - db
+    environment:
+      SQLSERVER_AUTH: "Data source=db;Initial catalog=UserDb;User id=sa;Password=P@ssw0rd"
+  web:
+    build:
+      context: ./server/server
+    ports:
+      - "8081:80"
+    links:
+      - db
+      - auth
+    environment:
+      SQLSERVER_MOVIE: "Data source=db;Initial catalog=NewsDb;User id=sa;Password=P@ssw0rd"
+  ui:
+    build:
+      context: ./frontend
+    ports:
+      - "4200:4200"
+  db:
+    image: "microsoft/mssql-server-windows-express"
+    ports:
+      - "1433:1433"
+    environment:
+      SA_PASSWORD: "P@ssw0rd"
+      ACCEPT_EULA: "Y"
+networks: 
+  default:
+    external:
+      name: nat
