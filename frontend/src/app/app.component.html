@@ -1,17 +1,17 @@
 <nav class="navbar navbar-default mat-toolbar mat-primary" *ngIf="showNavBar()">
   <div class="container-fluid">
-    <div class="navbar-header">
+    <div class="navbar-header logo">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <span>News App</span>
+      <span class="logo"><strong>NEWS APP</strong></span>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li><button id="dashboardButton" mat-button [routerLink]="['/news/home']">Dashboard</button></li>
-        <li><button id="favoritesButton" mat-button [routerLink]="['/news/favorites']">Favorites</button></li>
+        <li><button class="menubtn" id="dashboardButton" mat-button [routerLink]="['/news/home']">Dashboard</button></li>
+        <li><button class="menubtn" id="favoritesButton" mat-button [routerLink]="['/news/favorites']">Favorites</button></li>
 
         <li><input style="color:black" id="search-text" placeholder="Enter Text" [(ngModel)]="searchTerm"></li>
         <li><button id="search-btn" mat-button (click)="searchNews()">Search</button></li>

@@ -1,7 +1,7 @@
 
 
 <div class="dropdown category-drop-down">
-  <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">{{selectedCategory}}
+  <button class="btn btn-primary dropdown-toggle" id="catdropdown" type="button" data-toggle="dropdown">{{selectedCategory}}
     <span class="caret"></span></button>
   <ul class="dropdown-menu dropdownUL">
     <li class="dropdownEle" *ngFor="let category of categories" (click)="onCategorySelect(category);">

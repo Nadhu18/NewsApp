@@ -7,6 +7,7 @@ import { retry, catchError } from 'rxjs/operators';
 import { NewsApiModel } from './newsApiModel';
 import { Article } from './article';
 import { AuthService } from './auth.service';
+import {environment} from '../../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -27,7 +28,7 @@ export class NewsService {
   //gets all the movies that are matching the input from tmdb
   getSearchedNews(name: string, page: number = 0, pagesize: number = 5): Observable<NewsApiModel> {
     page++;
-    const endpoint = `http://localhost:55375/api/news/search/${name}}/${page}/${pagesize}`;
+    const endpoint = `${environment.searchEndpoint}/${name}/${page}/${pagesize}`;
     let headers = this.getHttpHeaders();
     return this.http.get(endpoint, { headers: headers }).pipe(
       retry(3),
@@ -39,7 +40,7 @@ export class NewsService {
   //return top news 
   getTopNews(page: number = 0, pagesize: number = 5): Observable<NewsApiModel> {
     page++;
-    const endpoint = `http://localhost:55375/api/news/topNews/${page}/${pagesize}`;
+    const endpoint = `${environment.topnewsEndpoint}/${page}/${pagesize}`;
     let headers = this.getHttpHeaders();
     return this.http.get(endpoint, { headers: headers }).pipe(
       retry(3),
@@ -51,7 +52,7 @@ export class NewsService {
   //returns category specific news
   getCategoryWiseNews(category: string, page: number = 0, pagesize: number = 5): Observable<NewsApiModel> {
     page++;
-    const endpoint = `http://localhost:55375/api/news/category/${category}/${page}/${pagesize}`;
+    const endpoint = `${environment.categoryEndpoint}/${category}/${page}/${pagesize}`;
     let headers = this.getHttpHeaders();
     return this.http.get(endpoint, { headers: headers }).pipe(
       retry(3),
@@ -67,18 +68,16 @@ export class NewsService {
 
   //returns all the articles from the database
   getWatchListedArticles(): Observable<Array<Article>> {
-    const endpoint = 'http://localhost:55375/api/news';
     let headers = this.getHttpHeaders();
-    return this.http.get<Array<Article>>(endpoint, { headers: headers }).pipe(
+    return this.http.get<Array<Article>>(environment.watchlistEndpoint, { headers: headers }).pipe(
       catchError(this.handleError)
     );
   }
 
   //method will add the article to watchlist and saves to the database
   addArticleTowatchlist(article: Article): Observable<Article> {
-    const endpoint = 'http://localhost:55375/api/news';
     let headers = this.getHttpHeaders();
-    return this.http.post(endpoint, article, { headers: headers }).pipe(
+    return this.http.post(environment.watchlistEndpoint, article, { headers: headers }).pipe(
       catchError(this.handleError),
       map(this.pickApiResponse)
     );
@@ -86,9 +85,8 @@ export class NewsService {
 
   //removes the particular article from the database
   deleteArticleFromWatchlist(id: number) {
-    const endpoint = 'http://localhost:55375/api/news';
     let headers = this.getHttpHeaders();
-    return this.http.delete(`${endpoint}/${id}`, { headers: headers }).pipe(
+    return this.http.delete(`${environment.watchlistEndpoint}/${id}`, { headers: headers }).pipe(
       catchError(this.handleError)
     );
   }

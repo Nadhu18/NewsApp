@@ -4,5 +4,9 @@
 // The list of which env maps to which file can be found in `.angular-cli.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  watchlistEndpoint: 'http://localhost:8081/api/news',
+  categoryEndpoint: 'http://localhost:8081/api/news/category',
+  topnewsEndpoint: 'http://localhost:8081/api/news/topNews',
+  searchEndpoint: 'http://localhost:8081/api/news/search'
 };

@@ -14,7 +14,7 @@ export class AuthService {
 
   constructor(private http: HttpClient) { }
 
-  private serviceURL = 'http://localhost:61069/auth';
+  private serviceURL = 'http://localhost:8089/auth';
   userId: string = "";
 
   //will return the token stored in localstorage 
