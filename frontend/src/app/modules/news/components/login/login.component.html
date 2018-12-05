@@ -1,6 +1,6 @@
 <div class="container">
   <div class="panel-group panel-card" id="accordion">
-    <div class="panel panel-default">
+    <div class="panel panel-primary">
       <div class="panel-heading">
         <h4 class="panel-title">
           <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">Login</a>
@@ -10,7 +10,7 @@
         <div class="panel-body">
           <mat-card class="card">
             <mat-card-header>
-              <mat-card-title>Login</mat-card-title>
+              <!-- <mat-card-title>Login</mat-card-title> -->
             </mat-card-header>
             <div class="errors" *ngIf="invalidCred">{{invalidCred}}</div>
             <mat-card-content>
@@ -34,13 +34,14 @@
               </form>
             </mat-card-content>
             <mat-card-actions>
-              <button mat-raised-button (click)="login()" color="primary" id="loginButton">Login</button>
+              <!-- <button mat-raised-button (click)="login()" color="primary" id="loginButton">Login</button> -->
+              <button  (click)="login()" type="button" class="btn btn-primary" id="loginButton">Login</button>
             </mat-card-actions>
           </mat-card>
         </div>
       </div>
     </div>
-    <div class="panel panel-default">
+    <div class="panel panel-primary">
       <div class="panel-heading">
         <h4 class="panel-title">
           <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">Register</a>
@@ -50,7 +51,7 @@
         <div class="panel-body">
           <mat-card class="card">
             <mat-card-header>
-              <mat-card-title>Register</mat-card-title>
+              <!-- <mat-card-title>Register</mat-card-title> -->
             </mat-card-header>
             <div class="errors" *ngIf="invalidReg">{{invalidReg}}</div>
             <mat-card-content>
@@ -95,7 +96,9 @@
               </form>
             </mat-card-content>
             <mat-card-actions>
-              <button mat-raised-button (click)="register()" color="primary" id="registerButton">Register</button>
+              <!-- <button mat-raised-button (click)="register()" color="primary" id="registerButton">Register</button> -->
+              <button (click)="register()" type="button" class="btn btn-primary" id="registerButton">Register</button>
+
             </mat-card-actions>
           </mat-card>
         </div>

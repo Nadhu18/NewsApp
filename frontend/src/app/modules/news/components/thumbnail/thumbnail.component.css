@@ -10,6 +10,12 @@
     overflow-y: auto;
 }
 
+.news-title {
+    height: 140px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
 .news-poster {
     height: 300px;
 }
@@ -23,14 +29,8 @@
     text-align: right;
 }
 
-#addToWatchlistButton {
+#addToWatchlistButton, #removeFromWatchlistButton {
     position: absolute;
     left: 10px;
-    bottom: 20px;
-}
-
-#removeFromWatchlistButton {
-    position: absolute;
-    left: 10px;
-    bottom: 20px;
+    bottom: 10px;
 }

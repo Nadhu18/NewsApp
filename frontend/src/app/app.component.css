@@ -7,3 +7,15 @@
     margin-top: 5px;
     margin-right: 10px;
 }
+
+#search-text {
+    margin-top: 5px;
+    border-radius: 3px;
+}
+
+#search-btn, #logOutButton {
+    margin-top: 5px;
+    margin-left: 5px;
+    margin-right: 15px;
+    border: 1px solid white;
+}
