@@ -38,6 +38,7 @@ export class CategorywiseComponent implements OnInit {
       this.service.getWatchListedArticles().subscribe(mw => {
         this.model.articles && this.model.articles.forEach(a => {
           if (mw.some(x => x.url == a.url)) {
+            a.id = mw.filter(x => x.url == a.url)[0].id;
             a.isWatchlisted = true;
           }
           else {
