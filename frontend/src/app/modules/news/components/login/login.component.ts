@@ -41,8 +41,8 @@ export class LoginComponent implements OnInit {
       }, error => {
         //triggered when login fails
         this.invalidCred = "*Invalid Credentials";
-        console.error("An Error has occured while logging in.", error);
-        alert("some error occurred. PLease try after some time");
+        // console.error("An Error has occured while logging in.", error);
+        // alert("some error occurred. PLease try after some time");
       });
     }
   }
@@ -64,7 +64,7 @@ export class LoginComponent implements OnInit {
           duration: 1000
         });
       }, error => {
-        console.error("An Error has occured while registering the user.", error);
+        // console.error("An Error has occured while registering the user.", error);
         alert("some error occurred. PLease try after some time");
       });
     }

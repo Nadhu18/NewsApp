@@ -47,11 +47,11 @@ export class SearchlistComponent implements OnInit {
           }
         });
       }, error => {
-        console.error("An Error has occured in searchlist component while getting favorites.", error);
+        // console.error("An Error has occured in searchlist component while getting favorites.", error);
         alert("some error occurred. PLease try after some time");
       });
     }, error => {
-      console.error("An Error has occured in searchlist component while getting articles.", error);
+      // console.error("An Error has occured in searchlist component while getting articles.", error);
       alert("some error occurred. PLease try after some time");
     });
   }

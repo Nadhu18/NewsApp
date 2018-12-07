@@ -34,7 +34,7 @@ export class ThumbnailComponent implements OnInit {
       });
       this.refreshCards();
     }, error => {
-      console.error("An Error has occured in thumbnail component while adding the article.", error);
+      // console.error("An Error has occured in thumbnail component while adding the article.", error);
       alert("some error occurred. PLease try after some time");
     });
   }
@@ -47,7 +47,7 @@ export class ThumbnailComponent implements OnInit {
       });
       this.refreshCards();
     }, error => {
-      console.error("An Error has occured in thumbnail component while removing article.", error);
+      // console.error("An Error has occured in thumbnail component while removing article.", error);
       alert("some error occurred. PLease try after some time");
     });
   }

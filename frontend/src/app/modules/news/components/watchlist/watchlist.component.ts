@@ -19,7 +19,7 @@ export class WatchlistComponent implements OnInit {
       this.articles.push(...m);
       this.articles && this.articles.forEach(a => { a.isWatchlisted = true;});
     }, error => {
-      console.error("An Error has occured in Watchlist component while getting articles.", error);
+      // console.error("An Error has occured in Watchlist component while getting articles.", error);
       alert("some error occurred. PLease try after some time");
     });
   }

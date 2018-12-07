@@ -46,11 +46,11 @@ export class CategorywiseComponent implements OnInit {
           }
         });
       }, error => {
-        console.error("An Error has occured in category component while getting favorites.", error);
+        // console.error("An Error has occured in category component while getting favorites.", error);
         alert("some error occurred. PLease try after some time");
       });
     }, error => {
-      console.error("An Error has occured in category component while getting the article.", error);
+      // console.error("An Error has occured in category component while getting the article.", error);
       alert("some error occurred. PLease try after some time");
     });
   }
