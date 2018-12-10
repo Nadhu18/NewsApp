@@ -14,7 +14,7 @@ export class ThumbnailComponent implements OnInit {
   article: Article;
 
   constructor(private service: NewsService, private snackBar: MatSnackBar, private router: Router) { 
-    this.router.routeReuseStrategy.shouldReuseRoute = function() {return false;}
+    this.router.routeReuseStrategy.shouldReuseRoute = function() {return false;};
     router.events.subscribe((e)=>{
       if(e instanceof NavigationEnd){
         router.navigated = false;

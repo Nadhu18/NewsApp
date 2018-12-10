@@ -2,17 +2,19 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { MatSnackBarModule } from '@angular/material';
-import { of } from 'rxjs';
+import { of, Observable } from 'rxjs';
 import { ThumbnailComponent } from './thumbnail.component';
 import { NewsService } from '../../news.service';
 import { Article } from '../../article';
 import { NewsApiModel } from '../../newsApiModel';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { Router, NavigationEnd } from '@angular/router';
 
 describe('ThumbnailComponent', () => {
   let component: ThumbnailComponent;
   let fixture: ComponentFixture<ThumbnailComponent>;
   let newsServiceSpy: jasmine.SpyObj<NewsService>;
+  let router: Router;
   let arti: Article = {
     author: "author",
     comments: "comments",
@@ -44,13 +46,22 @@ describe('ThumbnailComponent', () => {
     totalResults: 1
   };
 
+  class MockRouter {
+    public ne = new NavigationEnd(0, null, null);
+    public events = new Observable(observer => {
+      observer.next(this.ne);
+      observer.complete();
+    });
+    public routeReuseStrategy = {shouldReuseRoute: ()=> {return false;}};
+  }
+  
   beforeEach(async(() => {
     newsServiceSpy = jasmine.createSpyObj("NewsService", ["addArticleTowatchlist", "deleteArticleFromWatchlist"]);
 
     TestBed.configureTestingModule({
       imports: [HttpClientTestingModule, MatSnackBarModule, BrowserAnimationsModule],
       declarations: [ ThumbnailComponent ],
-      providers: [{provide: NewsService, useValue: newsServiceSpy}],
+      providers: [{provide: NewsService, useValue: newsServiceSpy}, { provide: Router, useClass: MockRouter }],
       schemas: [NO_ERRORS_SCHEMA]
     })
     .compileComponents();

@@ -20,7 +20,7 @@ describe('frontend App', () => {
   it('should register test6 user', () => {
     browser.element(by.css('[href="#collapse2"]')).click();
     browser.executeScript('window.scrollTo(0, document.body.scrollHeight)');
-    browser.element(by.id('rUserid')).sendKeys('test10');
+    browser.element(by.id('rUserid')).sendKeys('test13');
     browser.element(by.id('rFirstName')).sendKeys('test');
     browser.element(by.id('rLastName')).sendKeys('10');
     browser.element(by.id('rPassword')).sendKeys('123');
@@ -33,7 +33,7 @@ describe('frontend App', () => {
 
   it('should login with the registered user', () => {
     browser.executeScript('window.scrollTo(0, 0)');
-    browser.element(by.id('userid')).sendKeys('test8');
+    browser.element(by.id('userid')).sendKeys('test13');
     browser.element(by.id('password')).sendKeys('123');
     browser.pause();
     browser.element(by.id('loginButton')).click();
@@ -82,7 +82,7 @@ describe('frontend App', () => {
     itms.get(1).click();
     browser.sleep(5000);
     const arts = element.all(by.css('.favorite-btn'));
-    expect(arts.count()).toBe(10);
+    expect(arts.count()).toBe(9);
     arts.get(7).click();
     browser.sleep(2000);
     browser.element(by.id('favoritesButton')).click();
